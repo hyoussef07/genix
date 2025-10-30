@@ -81,7 +81,9 @@ pub fn estimate_entropy_for_str(s: &str, style: &str) -> Result<f64, String> {
     }
 
     // If detection failed (e.g., empty string), try style hint
-    if charset < 2 && let Some(hint) = charset_size_for_style(style, false) {
+    if charset < 2
+        && let Some(hint) = charset_size_for_style(style, false)
+    {
         charset = hint;
     }
 
@@ -164,7 +166,9 @@ pub fn estimate_entropy_detailed(s: &str, style: &str) -> Result<EntropyProfile,
         charset += 32;
     }
 
-    if charset < 2 && let Some(hint) = charset_size_for_style(style, false) {
+    if charset < 2
+        && let Some(hint) = charset_size_for_style(style, false)
+    {
         charset = hint;
     }
 

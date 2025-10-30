@@ -47,7 +47,9 @@ pub fn generate_many(
     no_ambiguous: bool,
     min_entropy: Option<f64>,
 ) -> Result<Vec<String>, String> {
-    if let Some(bits) = min_entropy && let Some(charset_size) = charset_size_for_style(style, no_ambiguous) {
+    if let Some(bits) = min_entropy
+        && let Some(charset_size) = charset_size_for_style(style, no_ambiguous)
+    {
         let per_char = (charset_size as f64).log2();
         if per_char <= 0.0 {
             return Err("invalid charset size for entropy calculation".into());

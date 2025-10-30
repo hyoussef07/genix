@@ -124,7 +124,10 @@ pub fn run() {
                 println!("{}", line);
             }
 
-            if clipboard && !results.is_empty() && let Err(e) = copy_to_clipboard(&results[0]) {
+            if clipboard
+                && !results.is_empty()
+                && let Err(e) = copy_to_clipboard(&results[0])
+            {
                 eprintln!("warning: failed to copy to clipboard: {}", e);
             }
         }
