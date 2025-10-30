@@ -1,0 +1,28 @@
+[package]
+name = "genix"
+version = "0.1.0"
+edition = "2024"
+description = "Small CLI for password generation and analysis (random, passphrase, pin, hex, base64)."
+authors = ["youssef hasnaoui <>"]
+license = "MIT"
+repository = "https://github.com/hyoussef07/genix"
+
+[dependencies]
+
+# CLI parsing
+clap = { version = "4", features = ["derive"] }
+
+# RNG and utilities
+rand = "0.8"
+base64 = "0.21"
+
+# Cross-platform clipboard (used when --clipboard is requested)
+arboard = "2.1"
+
+[dev-dependencies]
+criterion = "0.4"
+
+[lib]
+name = "genix_lib"
+path = "src/lib.rs"
+
